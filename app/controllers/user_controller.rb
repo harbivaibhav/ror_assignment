@@ -51,9 +51,5 @@ class UserController < ApplicationController
     def user_params
       params.require('user').permit(:email, :password, :password_confirmation, :first_name, :last_name, :company_name, :status, :profile_image, :role)
     end
-
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user.role = 'Admin')
-    end
+        
 end
