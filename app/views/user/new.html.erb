@@ -1,0 +1,54 @@
+<h1>Create new user</h1>
+
+<%= render 'shared/error' %>
+
+<%= form_with scope: :user, url: user_index_path, local: true, html: { multipart: true } do |f| %>
+	<p>
+    <%= f.label :email %><br/>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>  
+
+  <p>
+    <%= f.label :company_name %><br/>
+    <%= f.text_field :company_name %>
+  </p> 
+
+  <p>
+    <%= f.label :status %><br/>
+    <%= f.select(:status, ['Select', 'Active', 'Not Active']) %>
+  </p> 
+
+  <p>
+    <%= f.label :profile_image %><br/>
+    <%= f.file_field :profile_image, accept:'image/*' %>
+  </p> 
+
+  <p>
+    <%= f.label :role %><br/>
+    <%= f.select(:role, ['Select', 'Admin', 'Employer']) %>
+  </p> 
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

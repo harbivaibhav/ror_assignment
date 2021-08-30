@@ -1,0 +1,13 @@
+<h1>Employers Listing</h1>
+
+<div class="flickr_pagination">
+	<%= paginate @employers, remote: false %>
+</div>
+<% if correct_user %>
+	<%= render 'employer' %>
+<% else %>
+		<h3>Not permission to get access for this!</h3>
+<% end %>
+<div class="flickr_pagination">
+	<%= paginate @employers, remote: false %>
+</div>
