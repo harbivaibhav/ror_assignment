@@ -4,7 +4,7 @@
 
 	<% if current_user %>
 		</br>
-		<p>You are logged in</p>
+		<p>You are logged in as ... <%= current_user.email  %></p>
 	<% else %>
 		</br>
 		<p>If you are new then please <%= link_to 'REGISTER', new_user_registration_path %>  yourself & use it.</p>
